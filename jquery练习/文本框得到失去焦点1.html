@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本框得到失去焦点1</title>
+    <style>
+        body{
+            font:normal 12px/17px Arial;
+        }
+        div{
+            padding:2px;
+        } 
+        input, textarea { 
+             width: 12em; 
+             border: 1px solid #888;
+        }
+        .focus { 
+             border: 1px solid #f00;
+             background: #fcc;
+        } 
+        </style>
+</head>
+<body>
+    <form action="" method="post" id="regForm">
+		<fieldset>
+			<legend>个人基本信息</legend>
+				<div>
+					<label  for="username">名称:</label>
+					<input id="username" type="text" />
+				</div>
+                <div>
+					<label for="pass">密码:</label>
+					<input id="pass" type="password" />
+				</div>
+                <div>
+					<label for="msg">详细信息:</label>
+					<textarea id="msg" rows="2" cols="20"></textarea>
+				</div>
+		</fieldset>
+	</form>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $("input").add("textarea").on("focus", function(){
+            $(this).addClass("focus");
+        }).on("blur",function(){
+            $(this).removeClass("focus");
+        });
+    </script>
+</body>
+</html>

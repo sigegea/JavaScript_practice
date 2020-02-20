@@ -1,0 +1,54 @@
+@charset "utf-8";
+body {background:#fff;}
+body,button,ul,li,p,dl,dd,h1,h2,h3,h4,h5,h6,img{margin:0;padding:0;list-style-type:none;}
+a{text-decoration:none;}
+a:hover {text-decoration:underline;}
+.fixclear {clear:both;zoom:1;}
+.fixclear:after {clear:both;content:'';display:block;height:0;visibility:hidden;}
+
+#bd .mod .hd,#bd .but-mod,#bd .idfloat .hd{background:url(../images/repeat.png) repeat-x;}
+#bd .cons .but1,#bd .cons .but2,#bd .cons .but3,#bd .cons .but4{background:url(../images/button.png) no-repeat;height:38px;width:86px;}
+
+#bd {font-family: '宋体', Simsun;width:100%;margin:0 auto;}
+#bd a{color:#006699;font-size:14px;}
+#bd p{color:#7A7A7A;font-size:12px;line-height:20px;}
+#bd p a{color:#207207;font-size:12px;}
+#bd img{border:1px solid #D0D0D0;background:#fff;padding:2px;}
+#bd strong{display:block;font-size:14px;}
+#bd .pic img,#bd .phos img{display:block;}
+#bd .pic,#bd .phos a{display:block;text-align:center;line-height:25px;font-size:12px;}
+#bd .lis li{background-position:-52px -140px;padding-left:10px;line-height:19px;margin:7px 0;}
+#bd .pic-text .pic{float:left;padding-right:10px;}
+#bd .pic-text .text{float:left;}
+#bd .pic-text .text strong{display:block;font-weight:normal;}
+#bd .pic-text .text strong a{font-size:14px;}
+#bd .hd{position:relative;}
+#bd .more{position:absolute;top:0;right:10px;color:#4F900B;font-size:12px;}
+#bd .way{font-size:12px;padding:15px 0 0 0;}
+#bd .way a{font-size:12px;}
+#bd .cons{width:630px;margin:0 auto;}
+
+#bd .mod .hd{background-position:0 -106px;height:31px;line-height:31px;border-bottom:1px solid #D0D0D0;}
+#bd .mod .bd{border-top:2px solid #F5F4F5;}
+#bd .mod p{}
+#bd .mod .main{width:628px;border:1px solid #D0D0D0;margin-right:10px;float:left;}
+#bd .mod .sider{width:308px;border:1px solid #D0D0D0;float:left;}
+
+#bd .col{color:#FF6C00;}
+
+.gray{color:#666!important;font-size:12px!important;}
+
+
+
+#bd .mod-1{ border:solid 1px #cccccc; padding:0; margin:10px auto;}
+#bd .mod-1 .inner{ border:solid 1px #ffffff; background:#f5f5f5; padding:6px 0 5px 5px;}
+#bd .mod-1 .sider{ padding-left:13px; _padding-left:12px;}
+#bd .mod-1 .slide img{ width:380px; height:211px; border:none 0; padding:0;}
+#bd .mod-1 .slide{ float:left; width:615px; height:211px; overflow:hidden;}
+#bd .mod-1 .slide .pics{ float:left;}
+#bd .mod-1 .slide .tabs{ float:right; width:233px; height:212px; border:solid 1px #999999;}
+#bd .mod-1 .slide .tabs li{ border-bottom:solid 1px #999999; _height:39px;}
+#bd .mod-1 .slide .tabs a{ display:block; border:solid 1px #ffffff; height:39px; line-height:39px; text-align:center; background:url(../images/re_03.gif) 0 0 repeat-x; color:#333333;}
+#bd .mod-1 .slide .tabs a:hover{ text-decoration:none;}
+#bd .mod-1 .slide .tabs .on a{ position:relative; height:43px; overflow:hidden; line-height:43px; margin:-1px -1px -1px -23px; padding-left:23px; border:none 0; background:url(../images/on_03.png) 0 0 no-repeat; cursor:pointer; color:#ffffff;font-weight:bold;}
+#bd .mod-1 .sider .item{ *padding-bottom:4px;_padding-bottom:3px;}
