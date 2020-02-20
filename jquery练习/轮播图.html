@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq-轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #container{
+            width: 280px;
+            height: 280px;
+            overflow: hidden;
+            margin: 100px auto;
+        }
+        #pic{
+            width: 1120px;
+            height: 280px;
+        }
+        #container img{
+            width: 280px;
+            height: 280px;
+            border: 0;
+            float: left;
+        }
+        #sub-menu{
+            position: relative;
+            top: -30px;
+            color: #fff;
+        }
+        #sub-menu h4{
+            float: left;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        #sub-menu ul{
+            position: absolute;
+            right: 20px;
+        }
+        #sub-menu li{
+            float: left;
+            margin-left: 10px;
+            cursor: pointer;
+        }       
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="pic">
+            <img src="../js练习/img/s1.jpg" alt="">
+            <img src="../js练习/img/s2.jpg" alt="">
+            <img src="../js练习/img/s3.jpg" alt="">
+            <img src="../js练习/img/s4.jpg" alt="">
+        </div>
+        <div id="sub-menu">
+            <h4>&lt;</h4>
+            <h4>&gt;</h4>
+            <ul id="selected">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>     
+    </div>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            var nowIndex = 0;
+            var timer;
+            var $H4 = $("#sub-menu h4");
+            var $Img = $("#pic img");
+            $("#selected li").on("mouseover", function(){
+                nowIndex = $(this).index();
+                changImg();
+            })
+            $H4.on("click", function(){
+                if($H4.index == 0){
+                    nowIndex--;
+                    if(nowIndex == -1){
+                        nowIndex = 3;
+                    }
+                }else{
+                    nowIndex++;
+                    if(nowIndex == 4){
+                        nowIndex = 0;
+                    }
+                }
+                changImg();
+            })
+            function changImg(){
+                $Img.eq(nowIndex).css({display: "block"}).siblings().css({display: "none"});
+            }
+            function play(){
+                timer = setInterval(function(){
+                    $H4.eq(0).trigger("click");
+                }, 1000);
+            }
+            play();
+            $Img.hover(function(){
+                clearInterval(timer);
+            }, function(){
+                play();
+            })
+        })
+    </script>
+</body>
+</html>
