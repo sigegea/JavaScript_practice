@@ -44,7 +44,10 @@
             float: left;
             margin-left: 10px;
             cursor: pointer;
-        }       
+        }     
+        .select{
+            color: orange;
+        }  
     </style>
 </head>
 <body>
@@ -59,7 +62,7 @@
             <h4>&lt;</h4>
             <h4>&gt;</h4>
             <ul id="selected">
-                <li>1</li>
+                <li class="select">1</li>
                 <li>2</li>
                 <li>3</li>
                 <li>4</li>
@@ -73,10 +76,11 @@
             var timer;
             var $H4 = $("#sub-menu h4");
             var $Img = $("#pic img");
-            $("#selected li").on("mouseover", function(){
+            var $Li = $("#selected li");
+            $Li.on("mouseover", function(){
                 nowIndex = $(this).index();
                 changImg();
-            })
+            });
             $H4.on("click", function(){
                 if($H4.index == 0){
                     nowIndex--;
@@ -90,22 +94,23 @@
                     }
                 }
                 changImg();
-            })
+            });
             function changImg(){
                 $Img.eq(nowIndex).css({display: "block"}).siblings().css({display: "none"});
-            }
+                $Li.eq(nowIndex).addClass("select").siblings().removeClass("select");
+            };
             function play(){
                 timer = setInterval(function(){
                     $H4.eq(0).trigger("click");
                 }, 1000);
-            }
+            };
             play();
             $Img.hover(function(){
                 clearInterval(timer);
             }, function(){
                 play();
-            })
-        })
+            });
+        });
     </script>
 </body>
 </html>
