@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container{
+            width: 400px;
+            height: 400px;
+            background: #456789;
+            position: relative;
+            margin: 300px auto;
+        }
+        #drag{
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="drag"></div>
+    </div>
+    <script>
+        var oContainer = document.getElementById("container");
+        var oDrag = document.getElementById("drag");
+        oDrag.onmousedown = function(e){
+            var disX = e.clientX - oDrag.offsetLeft;
+            var disY = e.clientY - oDrag.offsetTop;
+            var maxX = oContainer.offsetWidth - oDrag.offsetWidth;
+            var maxY = oContainer.offsetTop - oDrag.offsetTop;
+            document.onmousemove = function(e){
+                oDrag.style.left = e.clientX - disX + "px";
+                oDrag.style.top = e.clientY - disY + "px";
+                if(oDrag.offsetLeft < 0){
+                    oDrag.style.left = 0 + "px";
+                }
+                if(oDrag.offsetTop < 0){
+                    oDrag.style.top = 0 + "px";
+                }
+                if(oDrag.offsetLeft > maxX){
+                    oDrag.style.left = maxX + "px";
+                }
+                if(oDrag.offsetTop > maxY){
+                    oDrag.style.top = maxY + "px";
+                }
+            };
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            };
+        };
+    </script>
+</body>
+</html>

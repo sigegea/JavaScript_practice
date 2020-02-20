@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            background: #ccc;
+            height: 300px;
+            width: 400px;
+            border: 1px solid #000000;
+        }
+        #menu{
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #000;
+        }
+        #menu li{
+            list-style: none;
+            float: left;
+            width: 120px;
+            text-align: center;
+            border-right: 1px solid #000;
+            cursor: pointer;
+        }
+        #content h3{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <ul id="menu">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JAVASCRIPT</li>
+            </ul>
+        </div>
+        <div id="content">
+            <h3>111</h3>
+            <h3>222</h3>
+            <h3>333</h3>
+        </div>
+    </div>
+    <script>
+        var oUl = document.getElementById("menu");
+        var aLi = oUl.getElementsByTagName("li");
+        var oDiv = document.getElementById("content");
+        var aH3 = oDiv.getElementsByTagName("h3");
+        for(var i = 0;i < aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                for(var i = 0;i < aH3.length;i++){
+                    aH3[i].style.display = "none";
+                }
+                aH3[this.index].style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

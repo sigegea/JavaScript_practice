@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>右键菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #menu li{
+            list-style: none;
+            cursor: pointer;
+            background: #ccc;
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        #menu .share{
+            border-bottom: 0;
+        }
+        #menu li:hover{
+            background: #ddd;
+        }
+        #menu{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 1px solid #333333;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+            <ul id="menu">
+                <li>打开</li>
+                <li>删除</li>
+                <li>编辑</li>
+                <li>重命名</li>
+                <li class="share">分享</li>
+            </ul>
+    </div>
+    <script>
+        var oUl = document.getElementById("menu");
+        var ali = oUl.getElementsByTagName("li");
+        document.oncontextmenu = function(e){
+            oUl.style.display = "block";
+            oUl.style.left = e.clientX + "px";
+            oUl.style.top = e.clientY + "px";
+            return false;
+        }
+        document.onclick = function(){
+            oUl.style.display = "none";
+        }
+        for(var i = 0;i < ali.length;i++){
+            ali[i].onclick = function(){
+                alert(this.innerHTML);
+            }
+        }
+    </script>
+</body>
+</html>
