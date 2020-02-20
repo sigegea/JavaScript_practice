@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>jq-折叠菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            border-bottom: 0;
+        }
+        .menu{
+            list-style: none;
+            display: none;
+        }
+        .title{
+            background: #333;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .menu li{
+            text-align: center;
+            background: #ccc;
+            border-bottom: 1px solid #000;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="container">
+        <div>
+            <div class="title">11</div>
+            <ul class="menu">
+                <li>22</li>
+                <li>33</li>
+                <li>44</li>
+            </ul>
+        </div>
+        <div>
+            <div class="title">11</div>
+            <ul class="menu">
+                <li>22</li>
+                <li>33</li>
+                <li>44</li>
+            </ul>
+        </div>
+    </div>
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        $(function(){
+            
+                $(".title").on("click", function(){
+                    $(this).next().stop().slideToggle(500);
+                });
+                
+                
+                
+                
+                
+               
+            
+
+
+
+
+
+
+        });
+
+
+
+
+    </script>
 </body>
 </html>
