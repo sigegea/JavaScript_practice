@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复选框全选反选2</title>
+</head>
+<body>
+    <form>
+        <div id="CheckedAll" >全选/全不选</div>  <br>
+        <input type="checkbox" name="items" value="足球"/>足球
+        <input type="checkbox" name="items" value="篮球"/>篮球
+        <input type="checkbox" name="items" value="羽毛球"/>羽毛球
+        <input type="checkbox" name="items" value="乒乓球"/>乒乓球<br/>
+        <input type="button" id="send" value="提　交"/> 
+     </form>
+     <script src="jquery-1.11.2.js"></script>
+     <script>
+         $(function(){
+            $("#CheckedAll").on("click", function(){
+                if($("input[type=checkbox]").prop("checked")){
+                    $("input[type=checkbox]").prop("checked", false);
+                }else{
+                    $("input[type=checkbox]").prop("checked", true);
+                } 
+            });
+
+
+
+
+         });
+         
+     </script>
+</body>
+</html>
