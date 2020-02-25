@@ -93,16 +93,9 @@
         <script src="jquery-1.11.2.js"></script>
         <script>
             $(function(){
-                var open = true;
-                console.log( $(".child_row_03").attr("display"));
-                $(".parent").on("click", function(){
-                    if(open){
-                        $(".child_"+$(this).attr("id")).addClass("dispare");
-                    }else{
-                        $(".child_"+$(this).attr("id")).removeClass("dispare");    
-                    }
-                    open = !open;        
-                })
+                $(".parent").on("click", function(){    
+                    $(".child_"+$(this).attr("id")).toggle();  
+                });
             });
         </script>
     </body>
